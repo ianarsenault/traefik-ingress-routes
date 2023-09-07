@@ -1,30 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app2-deployment
+  name: iglu-deployment
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: app2
+      app: iglu
   template:
     metadata:
       labels:
-        app: app2
+        app: iglu
     spec:
       containers:
-        - name: app2-container
+        - name: iglu-container
           image: nginx:latest
           ports:
             - containerPort: 80
           volumeMounts:
-          - name: app2-configmap
+          - name: iglu-configmap
             mountPath: /usr/share/nginx/html/index.html
             subPath: index.html
       volumes:
-      - name: app2-configmap
+      - name: iglu-configmap
         configMap:
-          name: app2-configmap
+          name: iglu-configmap
           items:
           - key: index.html
             path: index.html

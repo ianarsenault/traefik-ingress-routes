@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: app1-configmap
+  name: collector-configmap
 data:
   index.html: |-
     <!DOCTYPE html>

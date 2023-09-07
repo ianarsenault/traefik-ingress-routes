@@ -1,0 +1,15 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: whoami-whoami
+  namespace: traefik
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+  - match: Host(`snowplow.example.com`) && PathPrefix(`/whoami`)
+    kind: Rule
+    services:
+    - name: whoami
+      port: 80

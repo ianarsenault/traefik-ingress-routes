@@ -1,7 +1,7 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: app2-ingressroute
+  name: iglu-ingressroute
   namespace: traefik
 spec:
   entryPoints:
@@ -10,6 +10,6 @@ spec:
     - match: Host(`iglu.example.com`)
       kind: Rule
       services:
-        - name: app2-service
+        - name: iglu-service
           namespace: default
           port: 80
