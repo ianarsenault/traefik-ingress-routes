@@ -1,0 +1,15 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: app1-ingressroute
+  namespace: traefik
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`collector.example.com`)
+      kind: Rule
+      services:
+        - name: app1-service
+          namespace: default
+          port: 80

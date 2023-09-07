@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app2-configmap
+data:
+  index.html: |-
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Iglu</title>
+      </head>
+      <body>
+        <h1>I am the Iglu Server! Schemas and such!</h1>
+      </body>
+    </html>

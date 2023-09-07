@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app1-configmap
+data:
+  index.html: |-
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Collector</title>
+      </head>
+      <body>
+        <h1>I am the collector! Feed me events!</h1>
+      </body>
+    </html>
